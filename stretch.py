@@ -2,9 +2,6 @@ from PIL import Image
 import numpy as np
 
 
-np.set_printoptions(threshold=1000000)
-
-
 def stretch(image, y_zoom, x_zoom):
     origin_size, _ = image.size
     y_position = origin_size * (1.0 - y_zoom)
