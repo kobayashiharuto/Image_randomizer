@@ -2,7 +2,7 @@ from PIL import Image
 import numpy as np
 
 
-def stretch(image, y_zoom, x_zoom):
+def stretch_image(image, y_zoom, x_zoom):
     origin_size, _ = image.size
     y_position = origin_size * (1.0 - y_zoom)
     x_position = origin_size * (1.0 - x_zoom)
@@ -18,7 +18,7 @@ def stretch(image, y_zoom, x_zoom):
 
 def main():
     image = Image.open('data/binary.png')
-    image_stretched = stretch(image, 0.9, 0.9)
+    image_stretched = stretch_image(image, 0.9, 0.9)
     image_stretched.save('out/transform.png')
 
 
