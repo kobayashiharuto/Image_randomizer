@@ -3,24 +3,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 import noise
 import stretch
-
-
-np.set_printoptions(threshold=1000000)
-
-
-def show_image(image):
-    plt.imshow(image)
-    plt.show()
+import binary_converter
 
 
 def main():
     image = Image.open('data/9_0.png')
-    image_resized = image.resize((28, 28))
-    image_resized_gray = image_resized.convert('L')
-    image_array = np.array(image_resized_gray)
-    image__array_binary = ((image_array > 128) * 255).astype('u1')
-    image_binary = Image.fromarray(image__array_binary)
-    image_binary.save('out/binary.png')
+    image_binary = binary_converter.binary_convert(
+        image,
+        resize=28,
+        threshold=128
+    )
 
     for i in range(10):
         image_randomized = noise.noise_image(image_binary)
