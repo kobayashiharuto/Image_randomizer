@@ -3,6 +3,7 @@ from tools.move import move_image
 from tools.noise import noise_image
 from tools.stretch import stretch_image
 from tools.binary_converter import binary_convert
+import random
 
 
 def randomized_image_generate(image):
@@ -13,9 +14,14 @@ def randomized_image_generate(image):
     )
 
     images = []
-    for i in range(10):
+    for _ in range(10):
+        size_y = random.uniform(0.8, 1.1)
+        size_x = random.uniform(0.8, 1.1)
+        move_y = random.randint(-3, 3)
+        move_x = random.randint(-3, 3)
+
         image_randomized = noise_image(image_binary)
-        image_stretched = stretch_image(image_randomized, 0.7, 0.9)
-        image_moved = move_image(image_stretched, 3, 3)
+        image_stretched = stretch_image(image_randomized, size_y, size_x)
+        image_moved = move_image(image_stretched, move_y, move_x)
         images.append(image_moved)
     return images
