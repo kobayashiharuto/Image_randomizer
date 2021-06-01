@@ -80,7 +80,7 @@ def grid_to_mesh(src_grid, dst_grid):
     return mesh
 
 
-def randomize_image(image):
+def noise_image(image):
     dst_grid = griddify(shape_to_rect(image.size), 1, 1)
     src_grid = distort_grid(dst_grid, 2)
     mesh = grid_to_mesh(src_grid, dst_grid)
@@ -90,8 +90,8 @@ def randomize_image(image):
 
 def main():
     image = Image.open('out/binary.png')
-    randomized_image = randomize_image(image)
-    randomized_image.save('out/rand.png')
+    noised_image = noise_image(image)
+    noised_image.save('out/rand.png')
 
 
 if __name__ == '__main__':
