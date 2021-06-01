@@ -1,7 +1,7 @@
 from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
-import randmize
+import randomize
 
 
 np.set_printoptions(threshold=1000000)
@@ -22,7 +22,7 @@ def main():
     image_binary.save('out/binary.png')
 
     for i in range(10):
-        image_randomized = randmize.randomize_image(image_binary)
+        image_randomized = randomize.randomize_image(image_binary)
         image_randomized.save(f'out/{i}.png')
 
 
