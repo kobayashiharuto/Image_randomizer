@@ -1,6 +1,5 @@
 import numpy as np
 from PIL import Image
-from numpy.core.fromnumeric import size
 
 
 def quad_as_rect(quad):
