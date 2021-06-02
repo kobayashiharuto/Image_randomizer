@@ -16,7 +16,7 @@ def random28():
     size_x = random.uniform(0.7, 1.1)
     move_y = random.randint(-2, 2)
     move_x = random.randint(-2, 2)
-    rotate = random.uniform(-np.pi/18, np.pi/18)
+    rotate = random.uniform(-np.pi/36, np.pi/36)
     strength = 1
     move = 2
     return size_y, size_x, move_y, move_x, rotate, strength, move
@@ -28,9 +28,9 @@ def random200():
     size_x = random.uniform(0.8, 1.1)
     move_y = random.randint(-20, 20)
     move_x = random.randint(-20, 20)
-    rotate = random.uniform(-np.pi/18, np.pi/18)
-    strength = 4
-    move = 10
+    rotate = random.uniform(-np.pi/36, np.pi/36)
+    strength = random.randint(1, 3)
+    move = random.randint(1, 10)
     return size_y, size_x, move_y, move_x, rotate, strength, move
 
 
