@@ -1,6 +1,7 @@
 import random
 from PIL import Image
-from controller import randomized_image_generate
+from controller import randomized_binary_image_generate
+from controller import randomized_gray_image_generate
 import glob
 import numpy as np
 
@@ -40,7 +41,7 @@ def main():
 
     for path in paths:
         image = Image.open(path)
-        randmized_images = randomized_image_generate(
+        randmized_images = randomized_gray_image_generate(
             image, resize=200, count=file_count, random=random200
         )
 
