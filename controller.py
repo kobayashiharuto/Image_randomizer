@@ -13,7 +13,7 @@ def randomized_image_generate(image, resize, count, random):
 
     images = []
     for _ in range(count):
-        size_y, size_x, move_y, move_x = random
+        size_y, size_x, move_y, move_x = random()
         image_randomized = noise_image(image_binary)
         image_stretched = stretch_image(image_randomized, size_y, size_x)
         image_moved = move_image(image_stretched, move_y, move_x)

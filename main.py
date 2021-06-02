@@ -29,16 +29,20 @@ def random200():
 
 def main():
     paths = get_file_paths('data/origin_images')
+    file_count = 5
 
     for path in paths:
         image = Image.open(path)
         randmized_images = randomized_image_generate(
-            image, resize=200, count=5, random=random200()
+            image, resize=200, count=file_count, random=random200
         )
 
-        name = path.split('\\')[-1].split('.')[0]
+        file_name = path.split('\\')[-1].split('.')[0]
+        image_category = file_name.split('_')[0]
+        file_index = int(file_name.split('_')[1])
         for index, image in enumerate(randmized_images):
-            image.save(f'out/train_data1/{name}_{index}.png')
+            new_index = index + file_index * file_count
+            image.save(f'out/train_data1/{image_category}_{new_index}.png')
 
 
 if __name__ == '__main__':
