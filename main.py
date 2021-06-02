@@ -13,7 +13,8 @@ def main():
 
     for path in paths:
         image = Image.open(path)
-        randmized_images = randomized_image_generate(image, 500)
+        randmized_images = randomized_image_generate(
+            image, resize=200, count=5)
 
         name = path.split('\\')[-1].split('.')[0]
         for index, image in enumerate(randmized_images):
