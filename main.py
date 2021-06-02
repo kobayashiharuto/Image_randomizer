@@ -37,7 +37,7 @@ def random200():
 
 def main():
     paths = get_file_paths('data/origin_images')
-    file_count = 5
+    file_count = 100
 
     for path in paths:
         image = Image.open(path)
