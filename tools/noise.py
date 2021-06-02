@@ -80,17 +80,17 @@ def grid_to_mesh(src_grid, dst_grid):
     return mesh
 
 
-def noise_image(image):
-    dst_grid = griddify(shape_to_rect(image.size), 1, 1)
-    src_grid = distort_grid(dst_grid, 2)
+def noise_image(image, strength, move):
+    dst_grid = griddify(shape_to_rect(image.size), strength, strength)
+    src_grid = distort_grid(dst_grid, move)
     mesh = grid_to_mesh(src_grid, dst_grid)
     image = image.transform(image.size, Image.MESH, mesh)
     return image
 
 
 def main():
-    image = Image.open('out/binary.png')
-    noised_image = noise_image(image)
+    image = Image.open('data/9_0.png')
+    noised_image = noise_image(image, strength=4, move=10)
     noised_image.save('out/rand.png')
 
 
