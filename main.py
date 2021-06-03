@@ -30,8 +30,8 @@ def random200():
     move_y = random.randint(-20, 20)
     move_x = random.randint(-20, 20)
     rotate = random.uniform(-np.pi/36, np.pi/36)
-    strength = random.randint(1, 5)
-    move = random.randint(1, 15)
+    strength = 5
+    move = 30
     return size_y, size_x, move_y, move_x, rotate, strength, move
 
 
