@@ -90,7 +90,7 @@ def noise_image(image, strength, move):
 
 def main():
     image = Image.open('data/9_0.png')
-    noised_image = noise_image(image, strength=4, move=10)
+    noised_image = noise_image(image, strength=5, move=30)
     noised_image.save('out/rand.png')
 
 

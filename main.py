@@ -25,24 +25,24 @@ def random28():
 
 # 200*200サイズの時
 def random200():
-    size_y = random.uniform(0.8, 1.1)
-    size_x = random.uniform(0.8, 1.1)
+    size_y = random.uniform(0.5, 1.1)
+    size_x = random.uniform(0.5, 1.1)
     move_y = random.randint(-20, 20)
     move_x = random.randint(-20, 20)
     rotate = random.uniform(-np.pi/36, np.pi/36)
-    strength = random.randint(1, 3)
-    move = random.randint(1, 10)
+    strength = random.randint(1, 5)
+    move = random.randint(1, 15)
     return size_y, size_x, move_y, move_x, rotate, strength, move
 
 
 def main():
     paths = get_file_paths('data/origin_images')
-    file_count = 100
+    file_count = 500
 
     for path in paths:
         image = Image.open(path)
         randmized_images = randomized_gray_image_generate(
-            image, resize=200, count=file_count, random=random200
+            image, resize=50, count=file_count, random=random200
         )
 
         file_name = path.split('\\')[-1].split('.')[0]
