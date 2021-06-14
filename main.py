@@ -1,3 +1,4 @@
+import os
 import random
 from PIL import Image
 from controller import randomized_binary_image_generate
@@ -51,11 +52,15 @@ def main():
     paths = get_file_paths(
         r'C:\Users\owner\Desktop\icon_for_ML\arc\20class\ios_train3')
     file_count = 500
+    save_dir = 'out/train_datav7_8'
+
+    if not os.path.exists(save_dir):
+        os.mkdir(save_dir)
 
     for path in paths:
-        image = Image.open(path).resize((400, 400))
+        image = Image.open(path)
         randmized_images = randomized_gray_image_generate(
-            image, resize=50, count=file_count, random=random400
+            image, resize=50, count=file_count, random=random375
         )
 
         file_name = path.split('\\')[-1].split('.')[0]
@@ -64,7 +69,7 @@ def main():
 
         for index, image in enumerate(randmized_images):
             new_index = index + file_index * file_count
-            image.save(f'out/train_datav7_6/{image_category}_{new_index}.png')
+            image.save(f'{save_dir}/{image_category}_{new_index}.png')
 
 
 if __name__ == '__main__':
