@@ -53,9 +53,9 @@ def main():
     file_count = 500
 
     for path in paths:
-        image = Image.open(path)
+        image = Image.open(path).resize((400, 400))
         randmized_images = randomized_gray_image_generate(
-            image, resize=50, count=file_count, random=random375
+            image, resize=50, count=file_count, random=random400
         )
 
         file_name = path.split('\\')[-1].split('.')[0]
@@ -64,7 +64,7 @@ def main():
 
         for index, image in enumerate(randmized_images):
             new_index = index + file_index * file_count
-            image.save(f'out/train_datav7_5/{image_category}_{new_index}.png')
+            image.save(f'out/train_datav7_6/{image_category}_{new_index}.png')
 
 
 if __name__ == '__main__':
