@@ -27,18 +27,18 @@ def random28():
 def random200():
     size_y = random.uniform(0.5, 1.1)
     size_x = random.uniform(0.5, 1.1)
-    move_y = random.randint(-20, 20)
-    move_x = random.randint(-20, 20)
+    move_y = random.randint(-18, 18)
+    move_x = random.randint(-18, 18)
     rotate = random.uniform(-np.pi/36, np.pi/36)
-    strength = 5
-    move = 30
+    strength = 6
+    move = 25
     return size_y, size_x, move_y, move_x, rotate, strength, move
 
 
 def main():
     paths = get_file_paths(
         r'C:\Users\owner\Desktop\icon_for_ML\arc\20class\ios_train2')
-    file_count = 500
+    file_count = 10
 
     for path in paths:
         image = Image.open(path)
@@ -52,7 +52,7 @@ def main():
 
         for index, image in enumerate(randmized_images):
             new_index = index + file_index * file_count
-            image.save(f'out/train_datav7/{image_category}_{new_index}.png')
+            image.save(f'out/train_datav7_2/{image_category}_{new_index}.png')
 
 
 if __name__ == '__main__':
