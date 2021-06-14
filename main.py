@@ -37,7 +37,7 @@ def random200():
 
 def main():
     paths = get_file_paths(
-        r'C:\Users\owner\Desktop\icon_for_ML\arc\20class\ios_train2')
+        r'C:\Users\owner\Desktop\icon_for_ML\arc\20class\ios_train3')
     file_count = 500
 
     for path in paths:
@@ -52,7 +52,7 @@ def main():
 
         for index, image in enumerate(randmized_images):
             new_index = index + file_index * file_count
-            image.save(f'out/train_datav7_3/{image_category}_{new_index}.png')
+            image.save(f'out/train_datav7_4/{image_category}_{new_index}.png')
 
 
 if __name__ == '__main__':
