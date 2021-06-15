@@ -50,9 +50,9 @@ def random375():
 
 def main():
     paths = get_file_paths(
-        r'C:\Users\owner\Desktop\icon_for_ML\DATASET\train2')
+        r'C:\Users\owner\Desktop\icon_for_ML\DATASET\extend')
     file_count = 100
-    save_dir = 'out/train_datav10_1'
+    save_dir = 'out/train_datav10'
 
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
