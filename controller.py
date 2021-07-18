@@ -4,6 +4,7 @@ from tools.noise import noise_image
 from tools.stretch import stretch_image
 from tools.image_converter import binary_convert
 from tools.image_converter import only_resize
+import PIL.ImageOps as imgop
 
 
 def randomized_binary_image_generate(image, resize, count, random):
@@ -24,8 +25,10 @@ def randomized_binary_image_generate(image, resize, count, random):
     return images
 
 
-def randomized_gray_image_generate(image, resize, count, random):
+def randomized_gray_image_generate(image, resize, count, random, invert=False):
     image = image.convert('L')
+    if invert:
+        image = imgop.invert(image)
 
     images = []
     for _ in range(count):
