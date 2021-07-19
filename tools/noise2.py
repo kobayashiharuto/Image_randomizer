@@ -27,10 +27,12 @@ def noiser(size, image):
     ymap = (yy-dy).astype(np.float32)
     warped = cv.remap(image, xmap, ymap, cv.INTER_LINEAR)
     im = Image.fromarray((warped * 255).astype(np.uint8)).resize((size, size))
+    im.show()
     return im
 
 
-image = Image.open('target/0_0.png')
-for i in range(1, 100):
-    new_image = noiser(28, image)
-    new_image.save(f'out/test/rand_{i}.png')
+if __name__ == '__main__':
+    image = Image.open('target/0_0.png')
+    for i in range(1, 100):
+        new_image = noiser(28, image)
+        new_image.save(f'out/test/rand_{i}.png')

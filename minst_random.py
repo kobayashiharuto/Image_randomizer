@@ -2,7 +2,7 @@ import os
 import random
 from PIL import Image
 from controller import randomized_binary_image_generate
-from controller import randomized_gray_image_generate
+from controller import randomized_gray_image_generate_mnist
 import glob
 import numpy as np
 import PIL.ImageOps as imgops
@@ -30,14 +30,14 @@ def main():
         r'C:\Users\owner\Desktop\Image_tool\image_randomizer\target')
     file_count = 1000
 
-    save_dir = 'out/mnist_data3'
+    save_dir = 'out/mnist_data4'
 
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
 
     for path in paths:
         image = Image.open(path)
-        randmized_images = randomized_gray_image_generate(
+        randmized_images = randomized_gray_image_generate_mnist(
             image, resize=28, count=file_count, random=random28, invert=True
         )
 
