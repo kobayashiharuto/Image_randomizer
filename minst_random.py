@@ -20,8 +20,8 @@ def random28():
     move_y = random.randint(-5, 5)
     move_x = random.randint(-5, 5)
     rotate = random.uniform(-np.pi/18, np.pi/18)
-    strength = 3
-    move = 4
+    strength = 2
+    move = 5
     return size_y, size_x, move_y, move_x, rotate, strength, move
 
 
@@ -30,7 +30,7 @@ def main():
         r'C:\Users\owner\Desktop\ML\MNIST_only10\images')
     file_count = 5
 
-    save_dir = 'out/mnist_data'
+    save_dir = 'out/mnist_data2'
 
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)

@@ -89,9 +89,16 @@ def noise_image(image, strength, move):
 
 
 def main():
-    image = Image.open('data/9_0.png')
-    noised_image = noise_image(image, strength=5, move=30)
-    noised_image.save('out/rand.png')
+    image = Image.open(
+        r'C:\Users\owner\Desktop\ML\MNIST_only10\images\0_500.png')
+    for i in range(100):
+        noised_image = noise_image(image, strength=2, move=5)
+        noised_image.save(f'out/test/rand_{i}.png')
+    image = Image.open(
+        r'C:\Users\owner\Desktop\ML\MNIST_only10\images\0_99.png')
+    for i in range(100, 200):
+        noised_image = noise_image(image, strength=2, move=5)
+        noised_image.save(f'out/test/rand_{i}.png')
 
 
 if __name__ == '__main__':
