@@ -15,11 +15,11 @@ def get_file_paths(path: str):
 
 # 28*28サイズの時
 def random28():
-    size_y = random.uniform(0.7, 1.1)
-    size_x = random.uniform(0.7, 1.1)
+    size_y = random.uniform(0.5, 1.2)
+    size_x = random.uniform(0.5, 1.2)
     move_y = random.randint(-5, 5)
     move_x = random.randint(-5, 5)
-    rotate = random.uniform(-np.pi/18, np.pi/18)
+    rotate = random.uniform(-np.pi/9, np.pi/9)
     strength = 2
     move = 5
     return size_y, size_x, move_y, move_x, rotate, strength, move
@@ -27,10 +27,10 @@ def random28():
 
 def main():
     paths = get_file_paths(
-        r'C:\Users\owner\Desktop\ML\MNIST_only10\images')
-    file_count = 5
+        r'C:\Users\owner\Desktop\Image_tool\image_randomizer\target')
+    file_count = 1000
 
-    save_dir = 'out/mnist_data2'
+    save_dir = 'out/mnist_data3'
 
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
