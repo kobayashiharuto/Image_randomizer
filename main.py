@@ -50,10 +50,10 @@ def random375():
 
 def main():
     paths = get_file_paths(
-        r'C:\Users\owner\Desktop\DATA_for_ML\iconow\awesome_icon\extend')
-    file_count = 150
+        r'C:/Users/owner/Desktop/icon_awesome')
+    file_count = 50
 
-    save_dir = 'out/awesome_train_data_v1'
+    save_dir = 'out/awesome_train_data_v2'
 
     if not os.path.exists(save_dir):
         os.mkdir(save_dir)
@@ -61,7 +61,7 @@ def main():
     for path in paths:
         image = Image.open(path)
         randmized_images = randomized_gray_image_generate(
-            image, resize=50, count=file_count, random=random400
+            image, resize=50, count=file_count, random=random375
         )
 
         file_name = path.split('\\')[-1].split('.')[0]
